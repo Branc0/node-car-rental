@@ -1,5 +1,4 @@
-import { ICategoryRepository } from "../repositories/ICategoryRepository";
-import CategoryRepository from "../repositories/categoryRepository";
+import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
 
 interface ICreateCategory {
   name: string;

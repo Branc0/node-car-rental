@@ -1,5 +1,8 @@
-import Category from "../model/Category";
-import { ICategoryRepository, ICreateCategoryDTO } from "./ICategoryRepository";
+import Category from "../../modules/cars/model/Category";
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO,
+} from "../ICategoryRepository";
 
 export default class CategoryRepository implements ICategoryRepository {
   private categories: Category[];
