@@ -6,9 +6,17 @@ import {
 
 export default class CategoryRepository implements ICategoryRepository {
   private categories: Category[];
+  private static INSTANCE: CategoryRepository;
 
-  constructor() {
+  private constructor() {
     this.categories = [];
+  }
+
+  public static getInstance(): CategoryRepository {
+    if (!CategoryRepository.INSTANCE) {
+      CategoryRepository.INSTANCE = new CategoryRepository();
+    }
+    return CategoryRepository.INSTANCE;
   }
 
   create(data: ICreateCategoryDTO): Category {
