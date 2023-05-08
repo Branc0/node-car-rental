@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { ICreateCategoryDTO } from "../repositories/categoryRepository";
+import { ICreateCategoryDTO } from "../repositories/ICategoryRepository";
 
 export default class Category {
   id: string;
