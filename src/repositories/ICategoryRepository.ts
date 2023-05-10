@@ -6,7 +6,7 @@ export interface ICreateCategoryDTO {
 }
 
 export interface ICategoryRepository {
-  create: (data: ICreateCategoryDTO) => Category;
-  list: () => Category[];
-  find: (name: string) => Category | undefined;
+  create: (data: ICreateCategoryDTO) => Promise<Category>;
+  list: () => Promise<Category[]>;
+  find: (name: string) => Promise<Category | undefined>;
 }

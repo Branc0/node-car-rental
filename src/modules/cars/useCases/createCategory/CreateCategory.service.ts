@@ -8,12 +8,12 @@ interface ICreateCategory {
 class CreateCategoryService {
   constructor(private categoryRepository: ICategoryRepository) {}
 
-  execute({ name, description }: ICreateCategory) {
+  async execute({ name, description }: ICreateCategory) {
     if (!name || !description) {
       throw Error("Required data missing");
     }
 
-    const categoryExists = this.categoryRepository.find(name)!!;
+    const categoryExists = await this.categoryRepository.find(name)!!;
     if (categoryExists) {
       throw Error("This Category already exists!");
     }

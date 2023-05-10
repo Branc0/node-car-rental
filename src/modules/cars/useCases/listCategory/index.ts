@@ -2,8 +2,12 @@ import CategoryRepository from "../../../../repositories/implementations/Categor
 import ListCategoryController from "./ListCategory.controller";
 import ListCategoryService from "./ListCategory.service";
 
-const categoryRepository = CategoryRepository.getInstance();
-const listCategoryService = new ListCategoryService(categoryRepository);
-const listCategoryController = new ListCategoryController(listCategoryService);
+export default (): ListCategoryController => {
+  const categoryRepository = new CategoryRepository();
+  const listCategoryService = new ListCategoryService(categoryRepository);
+  const listCategoryController = new ListCategoryController(
+    listCategoryService
+  );
 
-export { listCategoryController };
+  return listCategoryController;
+};

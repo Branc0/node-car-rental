@@ -1,3 +1,5 @@
+import { Knex } from "knex";
+import { db } from "../../db";
 import Category from "../../modules/cars/model/Category";
 import {
   ICategoryRepository,
@@ -5,32 +7,28 @@ import {
 } from "../ICategoryRepository";
 
 export default class CategoryRepository implements ICategoryRepository {
-  private categories: Category[];
-  private static INSTANCE: CategoryRepository;
+  private repository: Knex.QueryBuilder<Category>;
 
-  private constructor() {
-    this.categories = [];
+  constructor() {
+    this.repository = db("categories");
   }
 
-  public static getInstance(): CategoryRepository {
-    if (!CategoryRepository.INSTANCE) {
-      CategoryRepository.INSTANCE = new CategoryRepository();
-    }
-    return CategoryRepository.INSTANCE;
-  }
-
-  create(data: ICreateCategoryDTO): Category {
+  async create(data: ICreateCategoryDTO): Promise<Category> {
     const newCategory = new Category(data);
-    this.categories = [...this.categories, newCategory];
-    return newCategory;
+    const [res] = await this.repository.insert(newCategory, "*");
+    return res;
   }
 
-  list(): Category[] {
-    return [...this.categories];
+  async list(): Promise<Category[]> {
+    const categories = await this.repository.select();
+    return categories;
   }
 
-  find(name: string): Category | undefined {
-    const category = this.categories.find((category) => category.name === name);
+  async find(name: string): Promise<Category | undefined> {
+    const category = await this.repository
+      .select("*")
+      .where("name", "=", name)
+      .first();
     return category;
   }
 }

@@ -2,8 +2,12 @@ import CategoryRepository from "../../../../repositories/implementations/Categor
 import FindCategoryController from "./FindCategory.controller";
 import FindCategoryService from "./FindCategory.service";
 
-const categoryRepository = CategoryRepository.getInstance();
-const findCategoryService = new FindCategoryService(categoryRepository);
-const findCategoryController = new FindCategoryController(findCategoryService);
+export default (): FindCategoryController => {
+  const categoryRepository = new CategoryRepository();
+  const findCategoryService = new FindCategoryService(categoryRepository);
+  const findCategoryController = new FindCategoryController(
+    findCategoryService
+  );
 
-export { findCategoryController };
+  return findCategoryController;
+};
