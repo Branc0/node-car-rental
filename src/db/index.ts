@@ -1,13 +1,19 @@
-import { createConnection, getConnectionOptions } from "typeorm";
+import knex from "knex";
 
-interface IOptions {
-  host: string;
-}
+export const config = {
+  client: "pg",
+  connection: {
+    host: "localhost",
+    port: 5432,
+    user: "docker",
+    password: "admin",
+    database: "db",
+  },
+  migrations: {
+    extension: "ts",
+    directory: "./src/db/migrations",
+  },
+  searchPath: ["knex", "public"],
+};
 
-getConnectionOptions().then((options) => {
-  const newOptions = options as IOptions;
-  newOptions.host = "database"; //Essa opção deverá ser EXATAMENTE o nome dado ao service do banco de dados
-  createConnection({
-    ...options,
-  });
-});
+export const db = knex(config);
