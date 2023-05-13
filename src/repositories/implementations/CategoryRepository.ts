@@ -1,10 +1,8 @@
 import { Knex } from "knex";
 import { db } from "../../db";
 import Category from "../../modules/cars/model/Category";
-import {
-  ICategoryRepository,
-  ICreateCategoryDTO,
-} from "../ICategoryRepository";
+import { ICategoryRepository } from "../ICategoryRepository";
+import { ICreateCategoryDTO } from "../../DTOs/ICreateCategoryDTO";
 
 export default class CategoryRepository implements ICategoryRepository {
   private repository: Knex.QueryBuilder<Category>;

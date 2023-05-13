@@ -1,9 +1,5 @@
+import { ICreateCategoryDTO } from "../DTOs/ICreateCategoryDTO";
 import Category from "../modules/cars/model/Category";
-
-export interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
 
 export interface ICategoryRepository {
   create: (data: ICreateCategoryDTO) => Promise<Category>;
