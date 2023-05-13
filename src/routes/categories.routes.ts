@@ -1,20 +1,15 @@
 import { Router } from "express";
-import createCategoryController from "../modules/cars/useCases/createCategory";
-import listCategoryController from "../modules/cars/useCases/listCategory";
-import findCategoryController from "../modules/cars/useCases/findCategory";
+import CreateCategoryController from "../modules/cars/useCases/createCategory/CreateCategory.controller";
+import ListCategoryController from "../modules/cars/useCases/listCategory/ListCategory.controller";
+import FindCategoryController from "../modules/cars/useCases/findCategory/FindCategory.controller";
 
 const categoriesRoutes = Router();
+const createCategoryController = new CreateCategoryController();
+const listCategoryController = new ListCategoryController();
+const findCategoryController = new FindCategoryController();
 
-categoriesRoutes.post("/", (req, res) => {
-  return createCategoryController().handle(req, res);
-});
-
-categoriesRoutes.get("/", (req, res) => {
-  return listCategoryController().handle(req, res);
-});
-
-categoriesRoutes.get("/:name", (req, res) => {
-  return findCategoryController().handle(req, res);
-});
+categoriesRoutes.post("/", createCategoryController.handle);
+categoriesRoutes.get("/", listCategoryController.handle);
+categoriesRoutes.get("/:name", findCategoryController.handle);
 
 export { categoriesRoutes };

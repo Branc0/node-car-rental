@@ -1,11 +1,16 @@
+import { inject, injectable } from "inversify";
 import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
 import Category from "../../model/Category";
-
+@injectable()
 class FindCategoryService {
-  constructor(private categoryRepository: ICategoryRepository) {}
+  constructor(
+    @inject("CategoryRepository")
+    private categoryRepository: ICategoryRepository
+  ) {}
 
-  execute(name: string): Category | undefined {
-    return this.categoryRepository.find(name);
+  async execute(name: string): Promise<Category | undefined> {
+    const category = await this.categoryRepository.find(name);
+    return category;
   }
 }
 

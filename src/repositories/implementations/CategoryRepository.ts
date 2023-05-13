@@ -3,7 +3,9 @@ import { db } from "../../db";
 import Category from "../../modules/cars/model/Category";
 import { ICategoryRepository } from "../ICategoryRepository";
 import { ICreateCategoryDTO } from "../../DTOs/ICreateCategoryDTO";
+import { injectable } from "inversify";
 
+@injectable()
 export default class CategoryRepository implements ICategoryRepository {
   private repository: Knex.QueryBuilder<Category>;
 

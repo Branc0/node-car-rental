@@ -3,7 +3,7 @@ import "dotenv/config.js";
 import "reflect-metadata";
 
 import { router } from "./routes";
-import { db } from "./db";
+import "./db";
 
 const PORT = process.env.PORT;
 
