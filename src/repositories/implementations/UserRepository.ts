@@ -18,4 +18,17 @@ export default class UserRepository implements IUserRepository {
     const [res] = await this.repository.insert(newUser, "*");
     return res;
   }
+
+  async findByEmail(email: string): Promise<User | undefined> {
+    const res = await this.repository
+      .select("*")
+      .where("email", "=", email)
+      .first();
+    return res;
+  }
+
+  async findById(id: string): Promise<User | undefined> {
+    const res = await this.repository.select("*").where("id", "=", id).first();
+    return res;
+  }
 }
