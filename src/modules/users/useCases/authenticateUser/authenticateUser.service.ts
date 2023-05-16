@@ -3,6 +3,7 @@ import { inject, injectable } from "inversify";
 import { IUserRepository } from "../../../../repositories/IUserRepository";
 import { compare } from "bcrypt";
 import { IAuthResponseDTO } from "../../../../DTOs/IAuthResponseDTO";
+import AppError from "../../../../errors/appError";
 
 interface IAuthParams {
   email: string;
@@ -21,13 +22,13 @@ export default class AuthenticateUserService {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user) {
-      throw Error("Invalid Credentials");
+      throw new AppError("Invalid Credentials", 401);
     }
 
     const isPasswordCorrect = await compare(password, user.password);
 
     if (!isPasswordCorrect) {
-      throw Error("Invalid Credentials");
+      throw new AppError("Invalid Credentials", 401);
     }
 
     const token = jwt.sign({}, TOKEN_SECRET, {

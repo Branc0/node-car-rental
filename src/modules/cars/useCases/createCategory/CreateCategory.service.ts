@@ -1,6 +1,7 @@
 import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
 import { inject, injectable } from "inversify";
 import Category from "../../model/Category";
+import AppError from "../../../../errors/appError";
 
 interface ICreateCategory {
   name: string;
@@ -16,12 +17,12 @@ class CreateCategoryService {
 
   async execute({ name, description }: ICreateCategory): Promise<Category> {
     if (!name || !description) {
-      throw Error("Required data missing");
+      throw new AppError("Required data missing");
     }
 
     const categoryExists = await this.categoryRepository.find(name)!!;
     if (categoryExists) {
-      throw Error("This Category already exists!");
+      throw new AppError("This Category already exists!");
     }
 
     const res = this.categoryRepository.create({ name, description });
