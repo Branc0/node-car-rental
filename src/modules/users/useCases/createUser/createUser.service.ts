@@ -1,8 +1,8 @@
 import { inject, injectable } from "inversify";
 import bcrypt from "bcrypt";
 
-import { ICreateUserDTO } from "../../../../DTOs/ICreateUserDTO";
-import { IUserRepository } from "../../../../repositories/IUserRepository";
+import { ICreateUserDTO } from "../../../../shared/DTOs/ICreateUserDTO";
+import { IUserRepository } from "../../repositories/IUserRepository";
 import User from "../../model/User";
 
 @injectable()

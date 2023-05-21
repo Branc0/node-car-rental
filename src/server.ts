@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config.js";
 import "reflect-metadata";
 import "express-async-errors";
-import { router } from "./routes";
+import { router } from "./shared/http/routes";
 import "./db";
 
 const PORT = process.env.PORT;

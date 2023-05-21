@@ -1,8 +1,8 @@
 import { Knex } from "knex";
-import { ICreateUserDTO } from "../../DTOs/ICreateUserDTO";
-import User from "../../modules/users/model/User";
+import { ICreateUserDTO } from "../../../../shared/DTOs/ICreateUserDTO";
+import User from "../../model/User";
 import { IUserRepository } from "../IUserRepository";
-import { db } from "../../db";
+import { db } from "../../../../db";
 import { injectable } from "inversify";
 
 @injectable()

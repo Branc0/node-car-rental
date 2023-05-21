@@ -1,6 +1,6 @@
-import { ICreateUserDTO } from "../../../../DTOs/ICreateUserDTO";
-import AppError from "../../../../errors/appError";
-import UserRepositoryMock from "../../../../repositories/implementations/test/UserRepositoryMock";
+import { ICreateUserDTO } from "../../../../shared/DTOs/ICreateUserDTO";
+import AppError from "../../../../shared/errors/appError";
+import UserRepositoryMock from "../../repositories/implementations/test/UserRepositoryMock";
 import CreateUserService from "../createUser/createUser.service";
 import AuthenticateUserService from "./authenticateUser.service";
 

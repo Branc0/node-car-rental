@@ -1,8 +1,8 @@
 import { Knex } from "knex";
-import { db } from "../../db";
-import Category from "../../modules/cars/model/Category";
+import { db } from "../../../../db";
+import Category from "../../model/Category";
 import { ICategoryRepository } from "../ICategoryRepository";
-import { ICreateCategoryDTO } from "../../DTOs/ICreateCategoryDTO";
+import { ICreateCategoryDTO } from "../../../../shared/DTOs/ICreateCategoryDTO";
 import { injectable } from "inversify";
 
 @injectable()

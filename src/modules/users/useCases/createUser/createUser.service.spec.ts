@@ -1,5 +1,5 @@
-import { ICreateUserDTO } from "../../../../DTOs/ICreateUserDTO";
-import UserRepositoryMock from "../../../../repositories/implementations/test/UserRepositoryMock";
+import { ICreateUserDTO } from "../../../../shared/DTOs/ICreateUserDTO";
+import UserRepositoryMock from "../../repositories/implementations/test/UserRepositoryMock";
 import User from "../../model/User";
 import CreateUserService from "./createUser.service";
 

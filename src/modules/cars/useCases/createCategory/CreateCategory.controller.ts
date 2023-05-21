@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateCategoryService } from "./CreateCategory.service";
 import container from "../../../../shared/container/inversify.config";
-import AppError from "../../../../errors/appError";
+import AppError from "../../../../shared/errors/appError";
 class CreateCategoryController {
   async handle(req: Request, res: Response) {
     const createCategoryService = container.resolve(CreateCategoryService);

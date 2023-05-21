@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
-import UserRepository from "../repositories/implementations/UserRepository";
-import AppError from "../errors/appError";
+import UserRepository from "../../../modules/users/repositories/implementations/UserRepository";
+import AppError from "../../errors/appError";
 
 const TOKEN_SECRET = process.env.TOKEN_SECRET as string;
 

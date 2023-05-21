@@ -1,9 +1,9 @@
 import { Container } from "inversify";
 
-import CategoryRepository from "../../repositories/implementations/CategoryRepository";
-import { ICategoryRepository } from "../../repositories/ICategoryRepository";
-import { IUserRepository } from "../../repositories/IUserRepository";
-import UserRepository from "../../repositories/implementations/UserRepository";
+import CategoryRepository from "../../modules/cars/repositories/implementations/CategoryRepository";
+import { ICategoryRepository } from "../../modules/cars/repositories/ICategoryRepository";
+import { IUserRepository } from "../../modules/users/repositories/IUserRepository";
+import UserRepository from "../../modules/users/repositories/implementations/UserRepository";
 
 const container = new Container();
 container

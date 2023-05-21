@@ -1,7 +1,7 @@
-import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
+import { ICategoryRepository } from "../../repositories/ICategoryRepository";
 import { inject, injectable } from "inversify";
 import Category from "../../model/Category";
-import AppError from "../../../../errors/appError";
+import AppError from "../../../../shared/errors/appError";
 
 interface ICreateCategory {
   name: string;

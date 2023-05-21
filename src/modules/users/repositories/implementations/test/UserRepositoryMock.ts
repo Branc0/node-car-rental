@@ -1,5 +1,5 @@
-import { ICreateUserDTO } from "../../../DTOs/ICreateUserDTO";
-import User from "../../../modules/users/model/User";
+import { ICreateUserDTO } from "../../../../../shared/DTOs/ICreateUserDTO";
+import User from "../../../model/User";
 import { IUserRepository } from "../../IUserRepository";
 
 export default class UserRepositoryMock implements IUserRepository {

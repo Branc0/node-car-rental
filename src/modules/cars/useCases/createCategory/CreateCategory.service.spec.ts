@@ -1,7 +1,7 @@
 import { rejects } from "assert";
-import AppError from "../../../../errors/appError";
-import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
-import CategoryRepositoryMock from "../../../../repositories/implementations/test/CategoryRepositoryMock";
+import AppError from "../../../../shared/errors/appError";
+import { ICategoryRepository } from "../../repositories/ICategoryRepository";
+import CategoryRepositoryMock from "../../repositories/implementations/test/CategoryRepositoryMock";
 import { CreateCategoryService } from "./CreateCategory.service";
 import "reflect-metadata";
 

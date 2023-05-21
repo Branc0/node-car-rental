@@ -1,5 +1,5 @@
-import { ICreateCategoryDTO } from "../../../DTOs/ICreateCategoryDTO";
-import Category from "../../../modules/cars/model/Category";
+import { ICreateCategoryDTO } from "../../../../../shared/DTOs/ICreateCategoryDTO";
+import Category from "../../../model/Category";
 import { ICategoryRepository } from "../../ICategoryRepository";
 
 export default class CategoryRepositoryMock implements ICategoryRepository {

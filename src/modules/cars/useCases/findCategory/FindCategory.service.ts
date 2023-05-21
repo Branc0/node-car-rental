@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { ICategoryRepository } from "../../../../repositories/ICategoryRepository";
+import { ICategoryRepository } from "../../repositories/ICategoryRepository";
 import Category from "../../model/Category";
 @injectable()
 class FindCategoryService {
