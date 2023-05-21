@@ -22,6 +22,7 @@ export default class CategoryRepositoryMock implements ICategoryRepository {
   find(name: string): Promise<Category | undefined> {
     return new Promise((resolve) => {
       const user = this._data.find((category) => category.name === name);
+      resolve(user);
     });
   }
 }

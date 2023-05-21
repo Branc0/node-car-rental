@@ -25,7 +25,7 @@ class CreateCategoryService {
       throw new AppError("This Category already exists!");
     }
 
-    const res = this.categoryRepository.create({ name, description });
+    const res = await this.categoryRepository.create({ name, description });
 
     return res;
   }
