@@ -12,7 +12,7 @@ export default class SpecificationRepository
   private repository: Knex.QueryBuilder<Specification>;
 
   constructor() {
-    this.repository = db("categories");
+    this.repository = db("specifications");
   }
 
   async create(data: ICreateSpecificationDTO): Promise<Specification> {
