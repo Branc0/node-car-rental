@@ -7,7 +7,7 @@ export default class User {
   password: string;
   email: string;
   driver_license: string;
-  admin?: string;
+  admin?: boolean;
   avatar?: string;
   created_at?: string;
 

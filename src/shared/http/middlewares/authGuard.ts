@@ -32,6 +32,7 @@ export async function authGuard(
     if (!user) {
       throw new AppError("User does not exist", 400);
     }
+    req.user = { id: user.id, isAdmin: user.admin ? true : false };
   } catch (err) {
     throw new AppError("invalid token", 400);
   }

@@ -5,6 +5,7 @@ import { authenticationRoutes } from "./authenticate.routes";
 import { authGuard } from "../middlewares/authGuard";
 import errorInterceptor from "../middlewares/errorInterceptor";
 import specificationsRoutes from "./specifications.routes";
+import { carRoutes } from "./car.routes";
 
 const router = Router();
 
@@ -13,6 +14,7 @@ router.use("/users", userRoutes);
 router.use(authGuard);
 router.use("/categories", categoriesRoutes);
 router.use("/specifications", specificationsRoutes);
+router.use("/car", carRoutes);
 router.use(errorInterceptor);
 
 export { router };
