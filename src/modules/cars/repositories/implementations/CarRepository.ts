@@ -23,4 +23,13 @@ export default class CarRepository implements ICarRepository {
     const cars = this.repository.select();
     return cars;
   }
+
+  async findByPlate(licensePlate: string): Promise<Car | undefined> {
+    const car = await this.repository
+      .select("*")
+      .where("license_plate", "=", licensePlate)
+      .first();
+
+    return car;
+  }
 }

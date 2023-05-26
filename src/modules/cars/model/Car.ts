@@ -23,7 +23,7 @@ export default class Car {
     category_id,
   }: ICreateCarDTO) {
     this.id = randomUUID();
-    this.available = false;
+    this.available = true;
     this.name = name;
     this.description = description;
     this.license_plate = license_plate;

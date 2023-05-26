@@ -12,9 +12,17 @@ export default class CarRepositoryMock implements ICarRepository {
       resolve(newCar);
     });
   }
+
   list(): Promise<Car[]> {
     return new Promise((resolve) => {
       resolve([...this.repository]);
     });
+  }
+
+  findByPlate(licensePlate: string): Promise<Car | undefined> {
+    const car = this.repository.find(
+      (car) => car.license_plate === licensePlate
+    );
+    return new Promise((resolve) => resolve(car));
   }
 }
