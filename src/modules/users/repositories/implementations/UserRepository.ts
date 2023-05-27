@@ -15,12 +15,13 @@ export default class UserRepository implements IUserRepository {
 
   async create(data: ICreateUserDTO): Promise<User> {
     const newUser = new User(data);
-    const [res] = await this.repository.insert(newUser, "*");
+    const [res] = await this.repository.clone().insert(newUser, "*");
     return res;
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
     const res = await this.repository
+      .clone()
       .select("*")
       .where("email", "=", email)
       .first();
@@ -28,7 +29,11 @@ export default class UserRepository implements IUserRepository {
   }
 
   async findById(id: string): Promise<User | undefined> {
-    const res = await this.repository.select("*").where("id", "=", id).first();
+    const res = await this.repository
+      .clone()
+      .select("*")
+      .where("id", "=", id)
+      .first();
     return res;
   }
 }

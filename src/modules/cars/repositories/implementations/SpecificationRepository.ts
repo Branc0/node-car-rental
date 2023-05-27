@@ -17,12 +17,12 @@ export default class SpecificationRepository
 
   async create(data: ICreateSpecificationDTO): Promise<Specification> {
     const newSpecification = new Specification(data);
-    const [res] = await this.repository.insert(newSpecification, "*");
+    const [res] = await this.repository.clone().insert(newSpecification, "*");
     return res;
   }
 
   async list(): Promise<Specification[]> {
-    const res = await this.repository.select();
+    const res = await this.repository.clone().select();
     return res;
   }
 }

@@ -15,17 +15,18 @@ export default class CategoryRepository implements ICategoryRepository {
 
   async create(data: ICreateCategoryDTO): Promise<Category> {
     const newCategory = new Category(data);
-    const [res] = await this.repository.insert(newCategory, "*");
+    const [res] = await this.repository.clone().insert(newCategory, "*");
     return res;
   }
 
   async list(): Promise<Category[]> {
-    const categories = await this.repository.select();
+    const categories = await this.repository.clone().select();
     return categories;
   }
 
   async find(name: string): Promise<Category | undefined> {
     const category = await this.repository
+      .clone()
       .select("*")
       .where("name", "=", name)
       .first();
