@@ -34,7 +34,7 @@ export async function authGuard(
     }
     req.user = { id: user.id, isAdmin: user.admin ? true : false };
   } catch (err) {
-    throw new AppError("invalid token", 400);
+    throw new AppError("invalid token", 401);
   }
   next();
 }
