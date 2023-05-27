@@ -10,7 +10,7 @@ export default class Car {
   fine_amount: number;
   brand: string;
   category_id: string;
-  available: boolean;
+  availability: boolean;
   created_at?: string;
 
   constructor({
@@ -23,7 +23,7 @@ export default class Car {
     category_id,
   }: ICreateCarDTO) {
     this.id = randomUUID();
-    this.available = true;
+    this.availability = true;
     this.name = name;
     this.description = description;
     this.license_plate = license_plate;
