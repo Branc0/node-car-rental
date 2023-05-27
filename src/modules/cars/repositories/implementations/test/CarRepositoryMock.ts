@@ -1,4 +1,5 @@
 import { ICreateCarDTO } from "../../../../../shared/DTOs/ICreateCarDTO";
+import { IListAvailableCarDTO } from "../../../../../shared/DTOs/IListAvailableCarDTO";
 import Car from "../../../model/Car";
 import { ICarRepository } from "../../ICarRepository";
 
@@ -24,5 +25,10 @@ export default class CarRepositoryMock implements ICarRepository {
       (car) => car.license_plate === licensePlate
     );
     return new Promise((resolve) => resolve(car));
+  }
+
+  listByAvailability(data: IListAvailableCarDTO): Promise<Car[]> {
+    const cars = this.repository.filter((car) => car.availability === true);
+    return new Promise((resolve) => resolve(cars));
   }
 }

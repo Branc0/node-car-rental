@@ -11,10 +11,10 @@ const router = Router();
 
 router.use("", authenticationRoutes);
 router.use("/users", userRoutes);
+router.use("/cars", carRoutes);
 router.use(authGuard);
 router.use("/categories", categoriesRoutes);
 router.use("/specifications", specificationsRoutes);
-router.use("/car", carRoutes);
 router.use(errorInterceptor);
 
 export { router };
