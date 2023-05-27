@@ -3,13 +3,9 @@ import container from "../../../../shared/container/inversify.config";
 import CreateCarService from "./createCar.service";
 
 export default class CreateCarController {
-  carService: CreateCarService;
-  constructor() {
-    this.carService = container.resolve(CreateCarService);
-  }
-
-  handle(req: Request, res: Response) {
-    req.body;
-    this.carService.execute(req.body);
+  async handle(req: Request, res: Response) {
+    const createCarService = container.resolve(CreateCarService);
+    const car = await createCarService.execute(req.body);
+    res.status(201).send(car);
   }
 }

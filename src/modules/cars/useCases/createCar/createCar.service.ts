@@ -2,11 +2,12 @@ import { inject, injectable } from "inversify";
 import { ICarRepository } from "../../repositories/ICarRepository";
 import { ICreateCarDTO } from "../../../../shared/DTOs/ICreateCarDTO";
 import AppError from "../../../../shared/errors/appError";
+import Car from "../../model/Car";
 
 @injectable()
 export default class CreateCarService {
   constructor(@inject("CarRepository") private carRepository: ICarRepository) {}
-  async execute(data: ICreateCarDTO) {
+  async execute(data: ICreateCarDTO): Promise<Car> {
     const isCarAlreadyRegistered = await this.carRepository.findByPlate(
       data.license_plate
     );
