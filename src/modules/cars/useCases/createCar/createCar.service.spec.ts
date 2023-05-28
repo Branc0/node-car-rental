@@ -1,4 +1,4 @@
-import { ICreateCarDTO } from "../../../../shared/DTOs/ICreateCarDTO";
+import { ICreateCarDTO } from "../../DTOs/ICreateCarDTO";
 import AppError from "../../../../shared/errors/appError";
 import Car from "../../model/Car";
 import { ICarRepository } from "../../repositories/ICarRepository";

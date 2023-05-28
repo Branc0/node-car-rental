@@ -1,5 +1,5 @@
 import { Knex } from "knex";
-import { ICreateUserDTO } from "../../../../shared/DTOs/ICreateUserDTO";
+import { ICreateUserDTO } from "../../DTOs/ICreateUserDTO";
 import User from "../../model/User";
 import { IUserRepository } from "../IUserRepository";
 import { db } from "../../../../db";

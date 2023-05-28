@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { ICreateSpecificationDTO } from "../../../../shared/DTOs/ICreateSpecificationDTO";
+import { ICreateSpecificationDTO } from "../../DTOs/ICreateSpecificationDTO";
 import Specification from "../../model/Specification";
 import { ISpecificationRepository } from "../ISpecificationRepository";
 import { Knex } from "knex";
@@ -23,6 +23,15 @@ export default class SpecificationRepository
 
   async list(): Promise<Specification[]> {
     const res = await this.repository.clone().select();
+    return res;
+  }
+
+  async findById(id: string): Promise<Specification | undefined> {
+    const res = await this.repository
+      .clone()
+      .select()
+      .where("id", "=", id)
+      .first();
     return res;
   }
 }

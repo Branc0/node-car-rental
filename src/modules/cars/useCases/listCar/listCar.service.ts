@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
 import { ICarRepository } from "../../repositories/ICarRepository";
-import { IListAvailableCarDTO } from "../../../../shared/DTOs/IListAvailableCarDTO";
+import { IListAvailableCarDTO } from "../../DTOs/IListAvailableCarDTO";
 
 @injectable()
 export default class ListCarService {

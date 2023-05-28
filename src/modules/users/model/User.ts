@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { ICreateUserDTO } from "../../../shared/DTOs/ICreateUserDTO";
+import { ICreateUserDTO } from "../DTOs/ICreateUserDTO";
 
 export default class User {
   id: string;

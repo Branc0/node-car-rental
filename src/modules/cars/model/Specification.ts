@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { ICreateSpecificationDTO } from "../../../shared/DTOs/ICreateSpecificationDTO";
+import { ICreateSpecificationDTO } from "../DTOs/ICreateSpecificationDTO";
 
 export default class Specification {
   id: string;

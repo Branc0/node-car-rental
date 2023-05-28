@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
 import { ICarRepository } from "../../repositories/ICarRepository";
-import { ICreateCarDTO } from "../../../../shared/DTOs/ICreateCarDTO";
+import { ICreateCarDTO } from "../../DTOs/ICreateCarDTO";
 import AppError from "../../../../shared/errors/appError";
 import Car from "../../model/Car";
 

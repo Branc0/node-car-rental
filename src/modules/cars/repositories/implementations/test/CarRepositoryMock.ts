@@ -1,5 +1,5 @@
-import { ICreateCarDTO } from "../../../../../shared/DTOs/ICreateCarDTO";
-import { IListAvailableCarDTO } from "../../../../../shared/DTOs/IListAvailableCarDTO";
+import { ICreateCarDTO } from "../../../DTOs/ICreateCarDTO";
+import { IListAvailableCarDTO } from "../../../DTOs/IListAvailableCarDTO";
 import Car from "../../../model/Car";
 import { ICarRepository } from "../../ICarRepository";
 

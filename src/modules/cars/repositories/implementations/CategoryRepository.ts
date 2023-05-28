@@ -2,7 +2,7 @@ import { Knex } from "knex";
 import { db } from "../../../../db";
 import Category from "../../model/Category";
 import { ICategoryRepository } from "../ICategoryRepository";
-import { ICreateCategoryDTO } from "../../../../shared/DTOs/ICreateCategoryDTO";
+import { ICreateCategoryDTO } from "../../DTOs/ICreateCategoryDTO";
 import { injectable } from "inversify";
 
 @injectable()

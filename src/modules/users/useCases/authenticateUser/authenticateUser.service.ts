@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { inject, injectable } from "inversify";
 import { IUserRepository } from "../../repositories/IUserRepository";
 import { compare } from "bcrypt";
-import { IAuthResponseDTO } from "../../../../shared/DTOs/IAuthResponseDTO";
+import { IAuthResponseDTO } from "../../../cars/DTOs/IAuthResponseDTO";
 import AppError from "../../../../shared/errors/appError";
 
 interface IAuthParams {

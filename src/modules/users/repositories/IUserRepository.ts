@@ -1,4 +1,4 @@
-import { ICreateUserDTO } from "../../../shared/DTOs/ICreateUserDTO";
+import { ICreateUserDTO } from "../DTOs/ICreateUserDTO";
 import User from "../model/User";
 
 export interface IUserRepository {

@@ -1,5 +1,5 @@
 import { UUID, randomUUID } from "crypto";
-import { ICreateCarDTO } from "../../../shared/DTOs/ICreateCarDTO";
+import { ICreateCarDTO } from "../DTOs/ICreateCarDTO";
 
 export default class Car {
   id: string;

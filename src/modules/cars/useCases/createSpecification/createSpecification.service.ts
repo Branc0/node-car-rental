@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { ICreateCategoryDTO } from "../../../../shared/DTOs/ICreateCategoryDTO";
+import { ICreateCategoryDTO } from "../../DTOs/ICreateCategoryDTO";
 import AppError from "../../../../shared/errors/appError";
 import { ISpecificationRepository } from "../../repositories/ISpecificationRepository";
 
