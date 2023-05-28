@@ -4,7 +4,7 @@ export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable("specifications_cars", (table) => {
     table.uuid("car_id").references("id").inTable("cars").notNullable();
     table
-      .uuid("specifications_id")
+      .uuid("specification_id")
       .references("id")
       .inTable("specifications")
       .notNullable();
