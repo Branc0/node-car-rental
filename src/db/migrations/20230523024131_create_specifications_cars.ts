@@ -2,9 +2,12 @@ import { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable("specifications_cars", (table) => {
-    table.uuid("id").primary().notNullable();
-    table.uuid("car_id").references("id").inTable("cars");
-    table.uuid("specifications_id").references("id").inTable("specifications");
+    table.uuid("car_id").references("id").inTable("cars").notNullable();
+    table
+      .uuid("specifications_id")
+      .references("id")
+      .inTable("specifications")
+      .notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now()).notNullable();
   });
 }
